@@ -1,0 +1,128 @@
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
+
+/* ===== Login Page ===== */
+.login-bg {
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  animation: fadeIn 1s ease forwards;
+}
+.login-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.login-card h1 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+.login-card input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 4px #2563eb;
+}
+.login-card button {
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.login-card button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Dashboard ===== */
+.navbar {
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout-btn {
+  background: #dc2626;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background: #b91c1c;
+}
+
+.container {
+  padding: 30px;
+  background: #f8fafc;
+  min-height: calc(100vh - 80px);
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.bottom {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+.metric {
+  flex: 1;
+  background: #1e293b;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.metric span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.fade-in { animation: fadeIn 1s ease forwards; }
+.slide-down { animation: slideDown 0.8s ease forwards; }
+.slide-up { animation: slideUp 0.8s ease forwards; }
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeIn 0.8s forwards;
+  animation-delay: 0.2s;
+}

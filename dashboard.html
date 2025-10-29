@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard de Vendas</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="fade-in">
+
+<header class="navbar slide-down">
+  <h2>📈 Dashboard de Vendas</h2>
+  <button id="logoutBtn" class="logout-btn">Sair</button>
+</header>
+
+<main class="container">
+  <div class="dashboard">
+    <div class="card fade-in-up">
+      <h3>Vendas por Cliente</h3>
+      <canvas id="vendasChart"></canvas>
+    </div>
+
+    <div class="card fade-in-up" style="animation-delay: 0.3s;">
+      <h3>Pedidos por Cliente</h3>
+      <canvas id="pedidosChart"></canvas>
+    </div>
+  </div>
+
+  <div class="dashboard" style="margin-top:20px;">
+    <div class="card fade-in-up" style="animation-delay: 0.6s;">
+      <h3>Faturamento por Período</h3>
+      <canvas id="faturamentoChart"></canvas>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="metric slide-up">
+      Ticket Médio
+      <span>R$ 985,75</span>
+    </div>
+    <div class="metric slide-up" style="animation-delay: 0.3s;">
+      Faturamento Total
+      <span>R$ 1,97 Mil</span>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
