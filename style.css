@@ -1,56 +1,179 @@
-/* ===== Reset ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
+@import url(clientes.css);
+@import url(fornecedores.css);
+@import url(solicitacao.css);
 
-/* ===== Login Page ===== */
-.login-bg {
-  background: linear-gradient(135deg, #2563eb, #9333ea);
+body {
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Fundo escuro com gradiente animado ===== */
+.login-dark {
+  background: radial-gradient(circle at 30% 30%, #0a0a0a, #000);
+  color: #fff;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 }
-.login-container {
-  animation: fadeIn 1s ease forwards;
+
+.login-dark::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(25, 118, 210, 0.1), transparent 70%),
+    radial-gradient(circle, rgba(0, 212, 255, 0.05), transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: pulse 6s infinite alternate;
+  z-index: 0;
 }
-.login-card {
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* ===== Card de login estilizado ===== */
+.login-wrapper {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  height: 100%;
+  /* Garante que ocupe a altura total do body */
+  width: 100%;
+  position: relative;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 45px 40px;
+  width: 360px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   text-align: center;
-  width: 320px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
-.login-card h1 {
-  color: #1e293b;
+
+.glass-card:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Logo ===== */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 160px;
+  user-select: none;
+}
+
+/* ===== Textos ===== */
+h1 {
+  font-size: 1.5rem;
   margin-bottom: 10px;
+  font-weight: 600;
+  color: #e0e0e0;
 }
-.login-card input {
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+  color: #707070;
+  margin-top: 25px;
+}
+
+/* ===== Campos ===== */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+input {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  transition: 0.3s;
-}
-.login-card input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 4px #2563eb;
-}
-.login-card button {
-  background: linear-gradient(135deg, #2563eb, #9333ea);
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 8px #2563eb;
+}
+
+/* ===== Botão ===== */
+.btn-gradient {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
   border: none;
   border-radius: 8px;
   padding: 12px;
   width: 100%;
   font-weight: bold;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: all 0.3s;
 }
-.login-card button:hover {
-  transform: scale(1.05);
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #00b4d8, #0077ff);
+  transform: scale(1.03);
+}
+
+/* ===== Animações ===== */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Dashboard ===== */
@@ -62,6 +185,7 @@ body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
   justify-content: space-between;
   align-items: center;
 }
+
 .logout-btn {
   background: #dc2626;
   border: none;
@@ -71,6 +195,7 @@ body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
   cursor: pointer;
   transition: 0.3s;
 }
+
 .logout-btn:hover {
   background: #b91c1c;
 }
@@ -80,22 +205,26 @@ body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
   background: #f8fafc;
   min-height: calc(100vh - 80px);
 }
+
 .dashboard {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
+
 .card {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .bottom {
-  margin-top: 25px;
+  margin-top: 100px;
   display: flex;
   gap: 20px;
 }
+
 .metric {
   flex: 1;
   background: #1e293b;
@@ -105,6 +234,7 @@ body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
   text-align: center;
   font-size: 1.2rem;
 }
+
 .metric span {
   display: block;
   font-size: 1.8rem;
@@ -113,16 +243,226 @@ body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; }
 }
 
 /* ===== Animations ===== */
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-.fade-in { animation: fadeIn 1s ease forwards; }
-.slide-down { animation: slideDown 0.8s ease forwards; }
-.slide-up { animation: slideUp 0.8s ease forwards; }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeIn 0.8s forwards;
   animation-delay: 0.2s;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  background: #0b0c10;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 220px;
+  box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+}
+
+/* ===== LOGO ===== */
+.sidebar-logo {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.sidebar-logo img {
+  width: 48px;
+  transition: transform 0.3s;
+}
+
+.sidebar:hover .sidebar-logo img {
+  transform: scale(1.1);
+}
+
+/* ===== NAVIGATION ===== */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.sidebar-nav a i {
+  font-size: 18px;
+  margin-right: 15px;
+  width: 25px;
+  text-align: center;
+  color: #00b4d8;
+  transition: color 0.3s;
+}
+
+.sidebar-nav a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.sidebar:hover a span {
+  opacity: 1;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(0, 180, 216, 0.1);
+  color: #fff;
+}
+
+.sidebar-nav a.active {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar-nav a.active i {
+  color: white;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  margin-left: 80px;
+  transition: margin-left 0.3s;
+  min-height: 100vh;
+  background: #0e1015;
+  color: white;
+}
+
+.sidebar:hover~.main-content {
+  margin-left: 220px;
+}
+
+.navbar {
+  background: #11131a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e5e5e5;
+}
+
+.metric {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+}
+
+.sidebar-nav a.active {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
+}
+.sidebar-nav a.active i {
+  color: white;
+}
+
+/* ===== BOTÃO EXTRATIR DADOS ===== */
+.btn-extrair {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+}
+
+.btn-extrair:hover {
+  background: linear-gradient(90deg, #00b4d8, #0077ff);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.7);
+}
+
+/* Posicionamento no header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #181b22;
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-left h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
 }

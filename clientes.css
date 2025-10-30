@@ -1,0 +1,231 @@
+/* ================================
+   === GRID DE CLIENTES / FORNECEDORES ===
+=================================== */
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+  justify-items: center;
+}
+
+/* ================================
+   === CARD PADRONIZADO ===
+=================================== */
+.cliente-card {
+  background: #1b1d22;
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  border-radius: 14px;
+  width: 280px;
+  height: 120px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cliente-card:hover {
+  background: rgba(0, 180, 216, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
+}
+
+/* ================================
+   === AVATAR (CÍRCULO) ===
+=================================== */
+.avatar {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #0077ff, #00b4d8);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+}
+
+/* ================================
+   === INFORMAÇÕES DO CARD ===
+=================================== */
+.info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.info h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info p {
+  color: #a8d4ff;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* ================================
+   === VARIAÇÕES DE TIPO ===
+=================================== */
+.revendedor .avatar,
+.juridico .avatar {
+  background: linear-gradient(135deg, #0077ff, #00b4d8);
+  box-shadow: 0 0 10px rgba(0, 119, 255, 0.6);
+}
+
+.consumidor .avatar {
+  background: linear-gradient(135deg, #00b4d8, #00ffcc);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+/* ================================
+   === TÍTULOS ===
+=================================== */
+h3 {
+  color: #00b4d8;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 180, 216, 0.3);
+  padding-bottom: 8px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* ================================
+   === MODAL (ADICIONAR FORNECEDOR) ===
+=================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  background: #1b1d22;
+  padding: 30px;
+  border-radius: 14px;
+  width: 420px;
+  max-width: 90%;
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.35);
+  color: #fff;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+.modal-content h3 {
+  color: #00b4d8;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 180, 216, 0.3);
+  padding-bottom: 8px;
+}
+
+/* Fechar modal */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #00b4d8;
+  transform: scale(1.1);
+}
+
+/* ================================
+   === FORMULÁRIO DO MODAL ===
+=================================== */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #9ca3af;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px #00b4d8;
+}
+
+/* Botão padrão DATEXTRACT */
+.btn-gradient {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #00b4d8, #0077ff);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+}
+
+/* ================================
+   === ANIMAÇÕES ===
+=================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fornecedores - DATEXTRACT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="fade-in dark-theme">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="logo.jpg" alt="DATEXTRACT Logo">
+  </div>
+  <nav class="sidebar-nav">
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+    <a href="clientes.html"><i class="fas fa-users"></i><span>Clientes</span></a>
+    <a href="fornecedores.html" class="active"><i class="fas fa-truck"></i><span>Fornecedores</span></a>
+    <a href="pedidos.html"><i class="fas fa-file-invoice"></i><span>Pedidos</span></a>
+    <a href="solicitacoes.html"><i class="fas fa-file-signature"></i><span>Solicitações</span></a>
+    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Sair</span></a>
+  </nav>
+</aside>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+  <header class="navbar slide-down">
+    <h2><i class="fas fa-truck"></i> Fornecedores</h2>
+  </header>
+
+  <section class="container fade-in-up">
+    <h3>Lista de Fornecedores</h3>
+
+    <div class="clientes-grid">
+      <div class="cliente-card revendedor">
+        <div class="avatar">M</div>
+        <div class="info">
+          <h4>Magazine Luiza SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">S</div>
+        <div class="info">
+          <h4>Shopee Brasil Internet Ltda</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">A</div>
+        <div class="info">
+          <h4>Americanas SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">A</div>
+        <div class="info">
+          <h4>Atacadão Distribuição SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">A</div>
+        <div class="info">
+          <h4>Amazon do Brasil Ltda</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">M</div>
+        <div class="info">
+          <h4>Mercado Livre SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">C</div>
+        <div class="info">
+          <h4>Carrefour Comércio e Indústria Ltda</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">G</div>
+        <div class="info">
+          <h4>Grupo Pão de Açúcar SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">V</div>
+        <div class="info">
+          <h4>Via Varejo SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+
+      <div class="cliente-card revendedor">
+        <div class="avatar">R</div>
+        <div class="info">
+          <h4>Riachuelo Confecções SA</h4>
+          <p>Jurídico</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== MODAL CADASTRO ===== -->
+<div id="modalFornecedor" class="modal">
+  <div class="modal-content slide-up">
+    <span class="close">&times;</span>
+    <h3><i class="fas fa-plus-circle"></i> Novo Fornecedor</h3>
+    <form id="formFornecedor">
+      <div class="form-group">
+        <label>Razão Social:</label>
+        <input type="text" id="razaoSocial" placeholder="Digite o nome da empresa" required>
+      </div>
+
+      <div class="form-group">
+        <label>Tipo:</label>
+        <select id="tipo" required>
+          <option value="Jurídico">Jurídico</option>
+          <option value="Físico">Físico</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>CNPJ:</label>
+        <input type="text" id="cnpj" placeholder="00.000.000/0000-00" required>
+      </div>
+
+      <button type="submit" class="btn-gradient">Cadastrar</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

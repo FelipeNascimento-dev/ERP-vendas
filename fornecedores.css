@@ -1,0 +1,145 @@
+/* ===============================
+   ABAS - Pedidos Compra/Venda
+================================= */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: flex-start;
+}
+
+.tab-button {
+  background: #1a1d25;
+  border: 1px solid rgba(0, 180, 216, 0.2);
+  color: #00b4d8;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.tab-button:hover {
+  background: rgba(0, 180, 216, 0.15);
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.6);
+  border-color: transparent;
+}
+
+/* Aba ativa / conteúdo */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.6s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===============================
+   TABELAS - Visual DATEXTRACT
+================================= */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #f1f1f1;
+  font-size: 0.96rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  background: #101217;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Cabeçalho */
+.data-table thead {
+  background: linear-gradient(90deg, #0077ff, #00b4d8);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Corpo da tabela */
+.data-table tbody tr {
+  background: #181b22;
+  transition: all 0.25s ease;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #1f232b;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(0, 180, 216, 0.12);
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+/* Células */
+.data-table td {
+  padding: 12px 18px;
+  color: #e5e5e5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 400;
+}
+
+/* Destaques numéricos e valores */
+.data-table td:nth-child(6),
+.data-table td:last-child {
+  font-weight: 600;
+  color: #00b4d8;
+}
+
+/* Coluna STATUS colorida dinamicamente */
+.data-table td:nth-child(7) {
+  font-weight: 600;
+}
+.data-table td:nth-child(7):contains("Aberto") {
+  color: #00ffcc;
+}
+.data-table td:nth-child(7):contains("Fechado") {
+  color: #00b4d8;
+}
+.data-table td:nth-child(7):contains("Cancelado") {
+  color: #f87171;
+}
+
+/* ===============================
+   TÍTULOS
+================================= */
+h3 {
+  color: #00b4d8;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0,180,216,0.3);
+  padding-bottom: 8px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+   ANIMAÇÕES SUAVES
+================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

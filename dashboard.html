@@ -3,45 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard de Vendas</title>
+<title>DATEXTRACT - Dashboard</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="fade-in">
 
-<header class="navbar slide-down">
-  <h2>📈 Dashboard de Vendas</h2>
-  <button id="logoutBtn" class="logout-btn">Sair</button>
-</header>
+<body class="fade-in dark-theme">
 
-<main class="container">
-  <div class="dashboard">
-    <div class="card fade-in-up">
-      <h3>Vendas por Cliente</h3>
-      <canvas id="vendasChart"></canvas>
-    </div>
-
-    <div class="card fade-in-up" style="animation-delay: 0.3s;">
-      <h3>Pedidos por Cliente</h3>
-      <canvas id="pedidosChart"></canvas>
-    </div>
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="logo.jpg" alt="DATEXTRACT Logo">
   </div>
+  <nav class="sidebar-nav">
+    <a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+    <a href="clientes.html"><i class="fas fa-users"></i><span>Clientes</span></a>
+    <a href="fornecedores.html"><i class="fas fa-truck"></i><span>Fornecedores</span></a>
+    <a href="pedidos.html"><i class="fas fa-file-invoice"></i><span>Pedidos</span></a>
+    <a href="solicitacoes.html"><i class="fas fa-file-signature"></i><span>Solicitações</span></a>
+    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Sair</span></a>
+  </nav>
+</aside>
 
-  <div class="dashboard" style="margin-top:20px;">
-    <div class="card fade-in-up" style="animation-delay: 0.6s;">
-      <h3>Faturamento por Período</h3>
-      <canvas id="faturamentoChart"></canvas>
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+  <header class="navbar slide-down">
+    <div class="navbar-left">
+      <h2>📈 Dashboard de Vendas</h2>
     </div>
-  </div>
+    <div class="navbar-right">
+      <a href="https://app.powerbi.com/view?r=SEU-LINK-AQUI" target="_blank" class="btn-extrair">
+        <i class="fas fa-database"></i> Extrair Dados
+      </a>
+    </div>
+  </header>
 
-  <div class="bottom">
-    <div class="metric slide-up">
-      Ticket Médio
-      <span>R$ 985,75</span>
+  <div class="container">
+    <div class="dashboard">
+      <div class="card fade-in-up">
+        <h3>Vendas por Cliente</h3>
+        <canvas id="vendasChart"></canvas>
+      </div>
+
+      <div class="card fade-in-up" style="animation-delay: 0.3s;">
+        <h3>Pedidos por Cliente</h3>
+        <canvas id="pedidosChart"></canvas>
+      </div>
     </div>
-    <div class="metric slide-up" style="animation-delay: 0.3s;">
-      Faturamento Total
-      <span>R$ 1,97 Mil</span>
+
+    <div class="dashboard" style="margin-top:20px;">
+      <div class="card fade-in-up" style="animation-delay: 0.6s;">
+        <h3>Faturamento por Período</h3>
+        <canvas id="faturamentoChart"></canvas>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="metric slide-up">
+        Ticket Médio
+        <span>R$ 985,75</span>
+      </div>
+      <div class="metric slide-up" style="animation-delay: 0.3s;">
+        Faturamento Total
+        <span>R$ 1,97 Mil</span>
+      </div>
     </div>
   </div>
 </main>

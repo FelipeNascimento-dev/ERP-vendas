@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos - DATEXTRACT</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="fade-in dark-theme">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="logo.jpg" alt="DATEXTRACT Logo">
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+      <a href="clientes.html"><i class="fas fa-users"></i><span>Clientes</span></a>
+      <a href="fornecedores.html"><i class="fas fa-truck"></i><span>Fornecedores</span></a>
+      <a href="pedidos.html" class="active"><i class="fas fa-file-invoice"></i><span>Pedidos</span></a>
+      <a href="solicitacoes.html"><i class="fas fa-file-signature"></i><span>Solicitações</span></a>
+      <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Sair</span></a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    <header class="navbar slide-down">
+      <h2><i class="fas fa-file-invoice"></i> Pedidos</h2>
+    </header>
+
+    <section class="container fade-in-up">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="compra">📦 Pedidos de Compra</button>
+        <button class="tab-button" data-tab="venda">💰 Pedidos de Venda</button>
+      </div>
+
+      <!-- ===== TABELA DE COMPRAS ===== -->
+      <div id="compra" class="tab-content active">
+        <h3>Pedidos de Compra</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Solicitação</th>
+              <th>Cliente</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor (R$)</th>
+              <th>Status</th>
+              <th>Atraso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>000001</td><td>00001</td><td>12646424000107</td><td>00001</td><td>2</td><td>49.90</td><td>Aberto</td><td>Sim</td></tr>
+            <tr><td>000002</td><td>00002</td><td>12345678000195</td><td>00002</td><td>5</td><td>349.99</td><td>Fechado</td><td>Sim</td></tr>
+            <tr><td>000003</td><td>00003</td><td>29876543000144</td><td>00003</td><td>1</td><td>120.00</td><td>Cancelado</td><td>Não</td></tr>
+            <tr><td>000004</td><td>00004</td><td>87965432000177</td><td>00004</td><td>3</td><td>15.75</td><td>Aberto</td><td>Não</td></tr>
+            <tr><td>000005</td><td>00005</td><td>45612378000188</td><td>00005</td><td>10</td><td>999.99</td><td>Fechado</td><td>Não</td></tr>
+            <tr><td>000006</td><td>00006</td><td>74125896000111</td><td>00006</td><td>4</td><td>45.50</td><td>Aberto</td><td>Não</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===== TABELA DE VENDAS ===== -->
+      <div id="venda" class="tab-content">
+        <h3>Pedidos de Venda</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Orçamento</th>
+              <th>Cliente</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor (R$)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>000001</td><td>00001</td><td>96321458000122</td><td>00001</td><td>10</td><td>359.00</td><td>Aberto</td></tr>
+            <tr><td>000002</td><td>00002</td><td>25874136000177</td><td>00002</td><td>2</td><td>440.00</td><td>Faturado</td></tr>
+            <tr><td>000003</td><td>00003</td><td>74125896000111</td><td>00003</td><td>5</td><td>402.50</td><td>Cancelado</td></tr>
+            <tr><td>000004</td><td>00004</td><td>36985214000166</td><td>00004</td><td>100</td><td>120.00</td><td>Faturado</td></tr>
+            <tr><td>000005</td><td>00005</td><td>85214796000122</td><td>00005</td><td>1</td><td>650.00</td><td>Aberto</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
